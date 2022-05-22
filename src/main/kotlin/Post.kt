@@ -1,0 +1,32 @@
+import Enums.PostTypes
+
+data class Post(
+    val id: ULong = 0U,
+    val ownerId: UInt = 0U,
+    val fromId: UInt,
+    val createdBy: UInt = 0U,
+    val date: UInt = 0U,
+    val text: String,
+    val replyOwnerId: UInt = 0U,
+    val replyPostId: UInt = 0U,
+    val friendsOnly: Boolean = false,
+    val comments: Comments = Comments(count = 0U),
+    val copyright: Copyright? = null,
+    val likes: Likes = Likes(count = 0U),
+    val reposts: Reposts = Reposts(count = 0U),
+    val views: Views = Views(count = 0U),
+    val postType: PostTypes = PostTypes.post,
+    val postSource: PostSource? = null,
+    val geo: Geo? = null,
+    val signerId: UInt = 0U,
+    val copyHistory: Set<Post>? = null,
+    val attachments: List<Attachment>? = null,
+    val canPin: Boolean = true,
+    val canDelete: Boolean = true,
+    val canEdit: Boolean = true,
+    val isPinned: Boolean = false,
+    val markedAsAds: Boolean = false,
+    val isFavorite: Boolean = false,
+    val donut: Donut = Donut(),
+    val postponedId: UInt = 0U
+)
