@@ -2,9 +2,9 @@ import Exceptions.CommentNotFoundException
 import Exceptions.PostNotFoundException
 
 object WallService {
-    private var posts = emptyArray<Post>()
-    private var comments = emptyArray<Comment>()
-    private var reports = emptyArray<Report>()
+    private var posts = mutableListOf<Post>()
+    private var comments = mutableListOf<Comment>()
+    private var reports = mutableListOf<Report>()
 
     private var nextPostId: ULong = 1U
     private var nextCommentId: ULong = 1U
