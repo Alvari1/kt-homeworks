@@ -10,9 +10,9 @@ object NoteService {
     private const val SORT_DESCENDING: UInt = 0U
     private const val SORT_ASCENDING: UInt = 1U
 
-    private var notes = mutableListOf<Note>()
-    private var comments = mutableListOf<Comment>()
-    private var deletedComments = mutableListOf<Comment>()
+    private val notes = mutableListOf<Note>()
+    private val comments = mutableListOf<Comment>()
+    private val deletedComments = mutableListOf<Comment>()
 
 
     private var nextNoteId: ULong = 1U
@@ -185,7 +185,7 @@ object NoteService {
         count: ULong = 1U,
         sort: UInt = SORT_DESCENDING
     ): List<Note> {
-        var outputList = emptyList<Note>()
+        val outputList = mutableListOf<Note>()
         var counter: ULong = 0U
 
         if (noteIds != null) {
@@ -232,7 +232,7 @@ object NoteService {
         offset: ULong = 0U,
         count: ULong = 1U,
     ): List<Comment> {
-        var outputList = emptyList<Comment>()
+        val outputList = mutableListOf<Comment>()
         var counter: ULong = 0U
 
         for (comment in comments) {
